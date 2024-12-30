@@ -1,0 +1,334 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Rivaaz- A Tradition</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="{% static 'img/favicon.png' %}" rel="icon">
+    <link href="{% static 'img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+    <link href="{% static 'vendor/aos/aos.css'%}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="{% static 'css/main.css'%}" rel="stylesheet">
+
+
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
+
+            <a href="index.html" class="logo d-flex align-items-center me-auto">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="assets/img/logo.png" alt=""> -->
+                <h1 class="sitename">Rivaaz</h1>
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="{% url 'core/add_product'%}" class="active">Add Product</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#cart">Cart</a></li>
+                    <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="#">Dropdown 1</a></li>
+                            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                <ul>
+                                    <li><a href="#">Deep Dropdown 1</a></li>
+                                    <li><a href="#">Deep Dropdown 2</a></li>
+                                    <li><a href="#">Deep Dropdown 3</a></li>
+                                    <li><a href="#">Deep Dropdown 4</a></li>
+                                    <li><a href="#">Deep Dropdown 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Dropdown 2</a></li>
+                            <li><a href="#">Dropdown 3</a></li>
+                            <li><a href="#">Dropdown 4</a></li>
+                        </ul> -->
+                    </li> 
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+            {% if user.is_authenticated %}
+            <a class="btn-getstarted" href="{% url  'user_logout'%}">Logout</a> 
+            <a class="btn-getstarted" href="#hero">Welcome {{user.username}}</a>
+            
+            {% else %}
+            <a class="btn-getstarted" href="{% url  'user_login'%}">Login</a>
+            <a class="btn-getstarted" href="{% url 'user_register'%}">Register</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <main class="main">
+
+
+        <!-- Hero Section -->
+
+
+
+        <section id="hero" class="hero section dark-background">
+
+            <img src="{%static 'img\Buy SALE Hand Painted Chiffon Saree for Wedding ,yellow Chiffon Saree ,yellow Saree, Chiffon Sari ,partywear Saree ,designer Saree,floral Sari Online in India - Etsy.jpeg'%}" alt="" data-aos="fade-in" class="">
+
+            <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>Crafted by Hand, Worn with Pride</h2>
+                        <p>We invite you to explore our collection and experience the elegance of hand-printed saris</p>
+                        <a href="#about" class="btn-get-started">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- /Hero Section -->
+
+
+        <!-- About Section -->
+        <section id="about" class="about section">
+
+            <div class="container">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-6 position-relative align-self-start order-lg-last order-first" data-aos="fade-up" data-aos-delay="200">
+                        <img src="{%static 'img\Handpainted tulips saree.jpeg'%}" class="img-fluid" alt="">
+
+                    </div>
+
+                    <div class="col-lg-6 content order-last  order-lg-first" data-aos="fade-up" data-aos-delay="100">
+                        <h3>About Us</h3>
+                        <p>
+                            At RIVAAZ, we believe that every sari tells a story—of tradition, culture, and exquisite craftsmanship. Based in the heart of India, our collection features hand-printed saris that celebrate the rich heritage of Indian textiles. Each piec is meticulously
+                            crafted by artisans who pour their heart and soul into every print, every stitch, and every fold.
+                        </p>
+                        <ul>
+                            <li>
+                                <i class="bi bi-diagram-3"></i>
+                                <div>
+                                    <h5>Our Mission</h5>
+                                    <p>Our mission is to preserve the age-old techniques of hand-printing and bring these timeless treasures to the modern woman. We are passionate about offering saris that not only look beautiful but also embody the stories
+                                        of the skilled hands that create them.Every sari we sell is a reflection of the skill, dedication, and passion of our artisans. These master craftsmen bring generations of knowledge to the table, creating patterns
+                                        and prints that are both intricate and delicate. From block printing to hand-painting, the artistic process behind every sari is what makes each piece special and unique.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="bi bi-fullscreen-exit"></i>
+                                <div>
+                                    <h5>Our Craftsmanship</h5>
+                                    <p>Our artisans use natural dyes and time-honored techniques to create patterns that are as unique as they are beautiful. Each sari is a work of art, blending traditional motifs with contemporary designs to suit today’s
+                                        fashion trends while honoring our cultural heritage.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="bi bi-broadcast"></i>
+                                <div>
+                                    <h5>Join Us</h5>
+                                    <p>We invite you to explore our collection and experience the elegance of hand-printed saris. Whether you're looking for something classic or modern, RIVAAZ has something special for every occasion.
+
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- /About Section -->
+        <!-- Cart Section -->
+        <section id="cart" class="cart section">
+
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Your Cart</h2>
+                    <p>Here are the items in your cart:</p>
+                </div>
+
+                <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+
+                    <!-- Cart Item 1 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="cart-item">
+                            <img src="{% static 'img/product1.jpg' %}" alt="Product 1" class="img-fluid">
+                            <div class="cart-details">
+                                <h3>Hand-Printed Sari</h3>
+                                <p>Category: Traditional</p>
+                                <p>Price: ₹2000</p>
+                                <a href="/product/1" class="btn btn-primary">View More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart Item 2 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="cart-item">
+                            <img src="{% static 'img/product2.jpg' %}" alt="Product 2" class="img-fluid">
+                            <div class="cart-details">
+                                <h3>Block-Printed Cotton Sari</h3>
+                                <p>Category: Cotton</p>
+                                <p>Price: ₹1800</p>
+                                <a href="/product/2" class="btn btn-primary">View More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart Item 3 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="cart-item">
+                            <img src="{% static 'img/product3.jpg' %}" alt="Product 3" class="img-fluid">
+                            <div class="cart-details">
+                                <h3>Silk Handcrafted Sari</h3>
+                                <p>Category: Silk</p>
+                                <p>Price: ₹3500</p>
+                                <a href="/product/3" class="btn btn-primary">View More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- /Cart Section -->
+
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Contact</h2>
+                <p>We'd love to hear from you! Whether you have a question about our products, need assistance with an order, or just want to provide feedback, feel free to reach out to us:</p>
+            </div>
+            <!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-12">
+
+                        <div class="info-wrap">
+                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                                <div>
+                                    <h3>Address</h3>
+                                    <p>New Mukharji Nagar, Bima Road, Dewas</p>
+                                </div>
+                            </div>
+                            <!-- End Info Item -->
+
+                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                                <i class="bi bi-telephone flex-shrink-0"></i>
+                                <div>
+                                    <h3>Call Us</h3>
+                                    <p>+91 5654892295</p>
+                                </div>
+                            </div>
+                            <!-- End Info Item -->
+
+                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                                <i class="bi bi-envelope flex-shrink-0"></i>
+                                <div>
+                                    <h3>Email Us</h3>
+                                    <p>info@example.com</p>
+                                </div>
+                            </div>
+                            <!-- End Info Item -->
+
+
+
+                            <div class="col-lg-100">
+                                <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="row gy-4">
+
+                                        <div class="col-md-6">
+                                            <label for="name-field" class="pb-2">Your Name</label>
+                                            <input type="text" name="name" id="name-field" class="form-control" required="">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="email-field" class="pb-2">Your Email</label>
+                                            <input type="email" class="form-control" name="email" id="email-field" required="">
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <label for="subject-field" class="pb-2">Subject</label>
+                                            <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <label for="message-field" class="pb-2">Message</label>
+                                            <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                                        </div>
+
+                                        <div class="col-md-12 text-center">
+                                            <div class="loading">Loading</div>
+                                            <div class="error-message"></div>
+                                            <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                                            <button type="submit">Send Message</button>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- End Contact Form -->
+
+                        </div>
+
+                    </div>
+
+        </section>
+        <!-- /Contact Section -->
+
+    </main>
+
+
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'vendor/php-email-form/validate.js'%}"></script>
+    <script src="{% static 'vendor/aos/aos.js'%}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js'%}"></script>
+    <script src="{% static 'vendor/purecounter/purecounter_vanilla.js'%}"></script>
+    <script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.js'%}"></script>
+    <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js'%}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+
+    <!-- Main JS File -->
+    <script src="{% static 'js/main.js'%} "></script>
+
+</body>
+
+</html>
